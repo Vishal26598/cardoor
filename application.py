@@ -1,9 +1,30 @@
-import MySQLdb
+# import MySQLdb
 
 from flask import Flask, render_template, request
 
-conn = MySQLdb.connect(host='localhost',user='root',password='',database='try')
-cur = conn.cursor()
+# conn = MySQLdb.connect(host='localhost',user='root',password='',database='try')
+# cur = conn.cursor()
+from flask import Flask, render_template, request
+
+import mysql.connector
+from mysql.connector import Error
+conn=''
+try:
+    conn = mysql.connector.connect(host='localhost',
+                             database='cardoor_db',
+                             user='mydb_user',
+                             password='')
+
+    if conn.is_connected():
+       db_Info = conn.get_server_info()
+       print("Connected to MySQL database... MySQL Server version on ",db_Info)
+       cursor = conn.cursor()
+       cursor.execute("select database();")
+       record = cursor.fetchone()
+       print ("Your connected to - ", record)
+except Error as e :
+    print ("Error while connecting to MySQL", e)
+
 
 app = Flask(__name__)
 

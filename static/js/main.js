@@ -162,16 +162,16 @@
             animationDuration: 20000,
             slides: [
                 {
-                    src: '/assets/img/slider-img/slider-img-1.jpg'
+                    src: 'static/img/slider-img/slider-img-1.jpg'
                 },
                 {
-                    src: '/assets/img/slider-img/slider-img-2.jpg'
+                    src: 'static/img/slider-img/slider-img-2.jpg'
                 },
                 {
-                    src: '/assets/img/slider-img/slider-img-3.jpg'
+                    src: 'static/img/slider-img/slider-img-3.jpg'
                 },
                 {
-                    src: 'https://images.pexels.com/photos/305070/pexels-photo-305070.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+                    src: 'static/img/slider-img/slider-img-4.jpg'
                 }
             ]
         }); //Home Page Two Slideshow

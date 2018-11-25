@@ -1,19 +1,17 @@
 import MySQLdb
-import os
+# import os
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
-conn = MySQLdb.connect(host='localhost',user='root',passwd='',)
-cursor = conn.cursor()
+conn = MySQLdb.connect(host='localhost',user='root',passwd='', database='cardoor')
+cur = conn.cursor()
 #cursor.execute('Create database try')
-cursor.execute('use try')
-#cursor.execute('Create table abcd(name varchar(50), email varchar(50), mobile int, password varchar(50))')
-name = "qwerty"
-email = "abc@abc.com"
-mobile = "9999999"
-mobile=int(mobile)
-password = "qwerty12"
-cursor.execute('INSERT INTO abcd (name, email, mobile) VALUES (%s, %s, %s)', (name, email, mobile))
+# cur.execute('insert into vdetails(`name of car`, `rate/hour`, avaialbility) values ("i30", 20, 0);')
+cur.execute('select cid, avaialbility from vdetails where avaialbility > 0;')
+
 conn.commit()
-print(cursor.rowcount, "was inserted.")
+result = cur.fetchall()
+
+print(cur.rowcount)
+print(result[0][0])

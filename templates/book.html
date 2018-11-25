@@ -50,6 +50,7 @@
         <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+  
 </head>
 
 <body class="loader-active">
@@ -157,10 +158,20 @@
                 </li>
 
                 <li>
-                  <i class="fa fa-road" aria-hidden="true"></i>Available
+                  <i class="fa fa-car" aria-hidden="true"></i>Available-{{ result[0][1] }}
                 </li>
-                <li class="orange-btn">
-                  <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a>
+                <!-- <form method="POST" action="{{ url_for('book') }}">
+                  <button name="btn1" value="2" type="submit">rent now</button>
+                </form> -->
+                <li class="orange-btn" id="2">
+                  {% if result[0][1] > 0 %}
+                  <form method="POST" action="{{ url_for('book') }}">
+                      <button name="btn1" value="{{ result[0][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                  </form>
+                  <!-- <a ><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a> -->
+                  {% else %}
+                  <i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now
+                  {% endif %}
                 </li>
               </ul>
 
@@ -187,10 +198,10 @@
                 </li>
 
                 <li>
-                  <i class="fa fa-road" aria-hidden="true"></i>Available
+                  <i class="fa fa-car" aria-hidden="true"></i>Available-{{ result[1][1] }}
                 </li>
                 <li class="orange-btn">
-                  <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a>
+                  <a href=""><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a>
                 </li>
               </ul>
 
@@ -217,10 +228,10 @@
                 </li>
 
                 <li>
-                  <i class="fa fa-road" aria-hidden="true"></i>Available
+                  <i class="fa fa-car" aria-hidden="true"></i>Available-{{ result[2][1] }}
                 </li>
                 <li class="orange-btn">
-                  <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a>
+                  <a href=""><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a>
                 </li>
               </ul>
 
@@ -242,19 +253,13 @@
               </div>
               <ul class="filter-car-more-info clearfix">
                 <li>
-                  <i class="fa fa-car" aria-hidden="true"></i>2011
-                </li>
-                <li>
                   <i class="fa fa-tachometer" aria-hidden="true"></i>Diesel
                 </li>
                 <li>
-                  <i class="fa fa-cog" aria-hidden="true"></i>Auto
-                </li>
-                <li>
-                  <i class="fa fa-road" aria-hidden="true"></i>15000
+                  <i class="fa fa-car" aria-hidden="true"></i>Available-{{ result[3][1] }}
                 </li>
                 <li class="orange-btn">
-                  <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a>
+                  <a href=""><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a>
                 </li>
               </ul>
 
@@ -279,19 +284,13 @@
               </div>
               <ul class="filter-car-more-info clearfix">
                 <li>
-                  <i class="fa fa-car" aria-hidden="true"></i>2011
-                </li>
-                <li>
                   <i class="fa fa-tachometer" aria-hidden="true"></i>Diesel
                 </li>
                 <li>
-                  <i class="fa fa-cog" aria-hidden="true"></i>Auto
-                </li>
-                <li>
-                  <i class="fa fa-road" aria-hidden="true"></i>15000
+                  <i class="fa fa-car" aria-hidden="true"></i>Available-{{ result[4][1] }}
                 </li>
                 <li class="orange-btn">
-                  <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a>
+                  <a href=""><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a>
                 </li>
               </ul>
 
@@ -313,19 +312,13 @@
               </div>
               <ul class="filter-car-more-info clearfix">
                 <li>
-                  <i class="fa fa-car" aria-hidden="true"></i>2011
-                </li>
-                <li>
                   <i class="fa fa-tachometer" aria-hidden="true"></i>Diesel
                 </li>
                 <li>
-                  <i class="fa fa-cog" aria-hidden="true"></i>Auto
-                </li>
-                <li>
-                  <i class="fa fa-road" aria-hidden="true"></i>15000
+                  <i class="fa fa-car" aria-hidden="true"></i>Available-{{ result[5][1] }}
                 </li>
                 <li class="orange-btn">
-                  <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a>
+                  <a href=""><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a>
                 </li>
               </ul>
 
@@ -347,19 +340,13 @@
               </div>
               <ul class="filter-car-more-info clearfix">
                 <li>
-                  <i class="fa fa-car" aria-hidden="true"></i>2011
-                </li>
-                <li>
                   <i class="fa fa-tachometer" aria-hidden="true"></i>Diesel
                 </li>
                 <li>
-                  <i class="fa fa-cog" aria-hidden="true"></i>Auto
-                </li>
-                <li>
-                  <i class="fa fa-road" aria-hidden="true"></i>15000
+                  <i class="fa fa-car" aria-hidden="true"></i>Available-{{ result[6][1] }}
                 </li>
                 <li class="orange-btn">
-                  <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a>
+                  <a href=""><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a>
                 </li>
               </ul>
 
@@ -381,19 +368,13 @@
               </div>
               <ul class="filter-car-more-info clearfix">
                 <li>
-                  <i class="fa fa-car" aria-hidden="true"></i>2011
-                </li>
-                <li>
                   <i class="fa fa-tachometer" aria-hidden="true"></i>Diesel
                 </li>
                 <li>
-                  <i class="fa fa-cog" aria-hidden="true"></i>Auto
-                </li>
-                <li>
-                  <i class="fa fa-road" aria-hidden="true"></i>15000
+                  <i class="fa fa-car" aria-hidden="true"></i>Available-{{ result[7][1] }}
                 </li>
                 <li class="orange-btn">
-                  <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a>
+                  <a href=""><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a>
                 </li>
               </ul>
 
@@ -416,19 +397,13 @@
               </div>
               <ul class="filter-car-more-info clearfix">
                 <li>
-                  <i class="fa fa-car" aria-hidden="true"></i>2011
-                </li>
-                <li>
                   <i class="fa fa-tachometer" aria-hidden="true"></i>Diesel
                 </li>
                 <li>
-                  <i class="fa fa-cog" aria-hidden="true"></i>Auto
-                </li>
-                <li>
-                  <i class="fa fa-road" aria-hidden="true"></i>15000
+                  <i class="fa fa-car" aria-hidden="true"></i>Available-{{ result[8][1] }}
                 </li>
                 <li class="orange-btn">
-                  <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a>
+                  <a href=""><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a>
                 </li>
               </ul>
 
@@ -449,19 +424,13 @@
               </div>
               <ul class="filter-car-more-info clearfix">
                 <li>
-                  <i class="fa fa-car" aria-hidden="true"></i>2011
-                </li>
-                <li>
                   <i class="fa fa-tachometer" aria-hidden="true"></i>Diesel
                 </li>
                 <li>
-                  <i class="fa fa-cog" aria-hidden="true"></i>Auto
-                </li>
-                <li>
-                  <i class="fa fa-road" aria-hidden="true"></i>15000
+                  <i class="fa fa-car" aria-hidden="true"></i>Available-{{ result[9][1] }}
                 </li>
                 <li class="orange-btn">
-                  <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a>
+                  <a href=""><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a>
                 </li>
               </ul>
 
@@ -483,19 +452,17 @@
               </div>
               <ul class="filter-car-more-info clearfix">
                 <li>
-                  <i class="fa fa-car" aria-hidden="true"></i>2011
-                </li>
-                <li>
                   <i class="fa fa-tachometer" aria-hidden="true"></i>Diesel
                 </li>
                 <li>
-                  <i class="fa fa-cog" aria-hidden="true"></i>Auto
-                </li>
-                <li>
-                  <i class="fa fa-road" aria-hidden="true"></i>15000
+                  <i class="fa fa-car" aria-hidden="true"></i>Available-{{ result[10][1] }}
                 </li>
                 <li class="orange-btn">
-                  <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a>
+                  {% if result[10][1] > 0 %}
+                  <a href="{{ url_for('payment') }}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a>
+                  {% else %}
+                  <i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now
+                  {% endif %}
                 </li>
               </ul>
 
@@ -517,16 +484,10 @@
               </div>
               <ul class="filter-car-more-info clearfix">
                 <li>
-                  <i class="fa fa-car" aria-hidden="true"></i>2011
-                </li>
-                <li>
                   <i class="fa fa-tachometer" aria-hidden="true"></i>Diesel
                 </li>
                 <li>
-                  <i class="fa fa-cog" aria-hidden="true"></i>Auto
-                </li>
-                <li>
-                  <i class="fa fa-road" aria-hidden="true"></i>15000
+                  <i class="fa fa-car" aria-hidden="true"></i>Available-{{ result[11][1] }}
                 </li>
                 <li class="orange-btn">
                   <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>rent now</a>

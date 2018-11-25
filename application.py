@@ -1,10 +1,12 @@
 import MySQLdb
+# import mysql.connector
 from datetime import datetime
 
 from flask import Flask, render_template, request, redirect
 res=''
 res1=''
 uid=None
+# conn = mysql.connector.connect(host='localhost',user='root',password='',database='cardoor')
 conn = MySQLdb.connect(host='localhost',user='root',password='',database='cardoor')
 cur = conn.cursor()
 

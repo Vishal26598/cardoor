@@ -112,7 +112,7 @@
                                 {% if uid is none %}
                                 <li><a href="{{ url_for('login') }}">Login/Signup</a></li>
                                 {% else %}
-                                <li><a href="/custinfo">Hello {{ name }}</a></li>
+                                <li><a href="{{ url_for('info') }}">Hello {{ name }}</a></li>
                                 <li><a href="/logout">Logout</a></li>
                                 {% endif %}
                             </ul>

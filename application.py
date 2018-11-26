@@ -1,13 +1,13 @@
-import MySQLdb
-# import mysql.connector
+#import MySQLdb
+import mysql.connector
 from datetime import datetime
 
 from flask import Flask, render_template, request, redirect
 res=''
 res1=''
 uid=None
-# conn = mysql.connector.connect(host='localhost',user='root',password='',database='cardoor')
-conn = MySQLdb.connect(host='localhost',user='root',password='',database='cardoor')
+conn = mysql.connector.connect(host='localhost',user='root',password='tanzytia',database='cardoor',buffered=True)
+#conn = MySQLdb.connect(host='localhost',user='root',password='',database='cardoor')
 cur = conn.cursor()
 
 app = Flask(__name__)
@@ -25,7 +25,7 @@ def index():
         returndate = request.form.get("returndate")
         pickuptime = request.form.get("pickuptime")
         returntime = request.form.get("returntime")
-        print(pickupdate,returndate,pickuptime,returntime)
+        #print(pickupdate,returndate,pickuptime,returntime)
         cur.execute('select cid, avaialbility from vdetails')
         conn.commit()
         result = cur.fetchall()
@@ -56,15 +56,18 @@ def login():
     else :
         email=request.form.get("email")
         pwd=request.form.get("pwd")
-        cur.execute("Select uid,name from customer where exists (select email,password from customer where email=%s and password=%s)",(email,pwd))
+        cur.execute("Select uid,name from customer where email=%s and password=%s", (email, pwd))
         conn.commit()
         global uid
+        global name
         user=cur.fetchall()
         uid=user[0][0]
+        name=user[0][1]
+        print(uid,user[0][1])
         if uid is None:
             return render_template("login.html")
         else:
-            return render_template("index.html",uid=uid,name=user[0][1])    
+            return render_template("index.html",uid=uid,name=name)    
 
 @app.route("/logout")
 def logout():
@@ -80,10 +83,11 @@ def info():
     # conn.commit()
     # book=cur.fetchall()
     # print(cus,book)
-    cur.execute("select * from vdetails v,booking b where b.cid in (select cid from booking where uid=%s)",(uid, ))
+    # print(uid)
+    cur.execute("select b.bid, b.`vehicle no`, v.`name of car`, b.`booking date/time` from vdetails v,booking b where b.cid=v.cid and b.uid = %s",(uid, ))
     conn.commit()
     car=cur.fetchall()
-    print(car)
+    print(car) 
     return render_template("customer.html",cus=cus,book=car)
 
 
@@ -91,12 +95,12 @@ def info():
 
 
 
-@app.route("/book", methods = ["POST"])
+@app.route("/book", methods = ["GET","POST"])
 def book():
     global res
     res = request.form.get("btn1")
 
-    cur.execute("select `name of car`,`rate/hour` from vdetails where cid=%s limit 1", res)
+    cur.execute("select `name of car`,`rate/hour` from vdetails where cid=%s limit 1", (res, ))
     conn.commit()
     global res1
     res1=cur.fetchall()
@@ -110,7 +114,7 @@ def payment():
     cur.execute("select `vehicle no` from v_no where cid=%s and status=0 limit 1", (res, ))
     conn.commit()
     res2=cur.fetchall()
-    print(res2)
+    # print(res2)
     # # print("hello3")
     # print(res1)
     cur.execute("update vdetails set avaialbility=avaialbility-1 where cid=%s", (res, ))
@@ -121,7 +125,7 @@ def payment():
     x=res2[0][0]
     cur.execute("insert into booking (cid, `vehicle no`, uid, `booking date/time`, `pickup date`, `drop date`, `pickup time`, `drop time`) values (%s, %s, %s, %s, %s, %s, %s, %s)", (res, x, uid, dt, pickupdate, returndate, pickuptime, returntime ))
     conn.commit()
-    return render_template("index.html")
+    return render_template("index.html",name=name)
 
 
 

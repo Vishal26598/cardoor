@@ -1,67 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-
-
+  <title>Payment</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles/payment.css">
 </head>
-<!------ Include the above in your HEAD tag ---------->
-<body style="margin:20px;">
-<div class="container" style="margin:35%; margin-top:10%" >
-    <div class="row">
-        <div class="col-xs-12 col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title" style="display: inline;font-weight: bold;">
-                        Payment Details
-                    </h3><br><br>
-                    <h4 class="panel-title" style="display: inline;font-weight: bold;">Car type:{{ res1[0][0] }}</h4><br>
-                    <h4 class="panel-title" style="display: inline;font-weight: bold;">Rate/hour:{{ res1[0][1] }}</h4><br>
-
-                </div>
-                <div class="panel-body">
-                    <form role="form">
-                    <div class="form-group">
-                        <label for="cardNumber">
-                            CARD NUMBER</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="cardNumber" placeholder="Valid Card Number"
-                                required autofocus />
-                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-6 col-md-6">
-                            <div class="form-group">
-                                <label for="expityMonth">
-                                    EXPIRY DATE</label>
-                                <div class="col-xs-7 col-lg-7 pl-ziro" style="padding-left: 0px;">
-                                    <input type="date" class="form-control" id="expityMonth" placeholder="MM" required />
-                                </div>
-                        </div>
-                        <div class="col-xs-5 col-md-5 pull-right" style=>
-                            <div class="form-group">
-                                <label for="cvCode">CVV</label>
-                                <input type="password" class="form-control" id="cvCode" placeholder="CVV" required />
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-             <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#"><span class="badge pull-right"><span class="glyphicon glyphicon-usd"></span>4200</span> Final Payment</a>
-                </li>
-            </ul>
-          <a href="/payment" class="btn btn-success btn-lg btn-block" role="button">Pay</a>
-					  </form>
+<body>
+  <main class="page payment-page">
+    <section class="payment-form dark">
+      <div class="container">
+        <div class="block-heading">
+          <h2>Payment</h2>
+          <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p> -->
         </div>
-    </div>
-</div>
+        <form action="{{ url_for('payment') }}" method="POST">
+          <div class="products">
+            <h3 class="title">Checkout</h3>
+            <div class="item">
+              <span class="price">Rate/hr:{{ res1[0][1] }}</span>
+              <p class="item-name">Car Type:{{ res1[0][0] }}</p>
+              <!-- <p class="item-description">Lorem ipsum dolor sit amet</p> -->
+            </div>
+            <div class="item">
+              <!-- <span class="price">$120</span> -->
+              <!-- <p class="item-name">Product 2</p> -->
+              <!-- <p class="item-description">Lorem ipsum dolor sit amet</p> -->
+            </div>
+            <div class="total">Total<span class="price">₹ {{ total }}</span></div>
+          </div>
+          <div class="card-details">
+            <h3 class="title">Credit Card Details</h3>
+            <div class="row">
+              <div class="form-group col-sm-7">
+                <label for="card-holder">Card Holder</label>
+                <input id="card-holder" type="text" class="form-control" placeholder="Card Holder" aria-label="Card Holder" aria-describedby="basic-addon1" required />
+              </div>
+              <div class="form-group col-sm-5">
+                <label for="">Expiration Date</label>
+                <div class="input-group expiration-date">
+                  <input type="text" class="form-control" placeholder="MM" aria-label="MM" aria-describedby="basic-addon1" required />
+                  <span class="date-separator">/</span>
+                  <input type="text" class="form-control" placeholder="YY" aria-label="YY" aria-describedby="basic-addon1" required />
+                </div>
+              </div>
+              <div class="form-group col-sm-8">
+                <label for="card-number">Card Number</label>
+                <input id="card-number" type="text" class="form-control" placeholder="Card Number" aria-label="Card Holder" aria-describedby="basic-addon1" required />
+              </div>
+              <div class="form-group col-sm-4">
+                <label for="cvc">CVC</label>
+                <input id="cvc" type="text" class="form-control" placeholder="CVC" aria-label="Card Holder" aria-describedby="basic-addon1" required />
+              </div>
+              <div class="form-group col-sm-12">
+                <a href="{{ url_for('payment') }}"><button type="button" class="btn btn-primary btn-block">Proceed</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>

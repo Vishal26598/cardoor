@@ -1,139 +1,39 @@
-<!DOCTYPE html>
-<html class="no-js" lang="zxx">
+{% extends "layout.html" %}
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--=== Favicon ===-->
-    <link rel="shortcut icon" href="static/img/favicon.ico" type="image/x-icon" />
-
-    <title>Cardoor</title>
-
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%7COpen+Sans:400,300%7CLibre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="static/styles/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="static/styles/settings.css">
-    <link rel="stylesheet" type="text/css" href="static/styles/simple-line-icons.css">
-    <link rel="stylesheet" type="text/css" href="static/styles/font-awesome1.css">
-    <link rel="stylesheet" type="text/css" href="static/styles/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="static/styles/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="static/styles/jquery.timepicker.css">
-    <link rel="stylesheet" type="text/css" href="static/styles/jquery.fancybox.css">
-    <link rel="stylesheet" type="text/css" href="static/styles/jquery.selectBox.css">
-    <link rel="stylesheet" type="text/css" href="static/styles/global.css">
-    <link rel="stylesheet" type="text/css" href="static/styles/style1.css" >
-    <link rel="stylesheet" type="text/css" href="static/styles/responsive1.css">
-    <link rel="stylesheet" type="text/less" href="static/styles/skin.less">
-
-    <!--=== Bootstrap CSS ===-->
-    <link href="static/styles/bootstrap.min.css" rel="stylesheet">
-    <!--=== Slicknav CSS ===-->
-    <link href="static/plugins/slicknav.min.css" rel="stylesheet">
-    <!--=== Magnific Popup CSS ===-->
-    <link href="static/plugins/magnific-popup.css" rel="stylesheet">
-    <!--=== Owl Carousel CSS ===-->
-    <link href="static/plugins/owl.carousel.min.css" rel="stylesheet">
-    <!--=== Gijgo CSS ===-->
-    <link href="static/plugins/gijgo.css" rel="stylesheet">
-    <!--=== FontAwesome CSS ===-->
-    <link href="static/styles/font-awesome.css" rel="stylesheet">
-    <!--=== Theme Reset CSS ===-->
-    <link href="static/styles/reset.css" rel="stylesheet">
-    <!--=== Main Style CSS ===-->
-    <link href="static/styles/style.css" rel="stylesheet">
-    <!--=== Responsive CSS ===-->
-    <link href="static/styles/responsive.css" rel="stylesheet">
+{% block heading %}
 
 
-    <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  
-</head>
+<link rel="stylesheet"  href="static/styles/settings.css">
+<link rel="stylesheet"  href="static/styles/simple-line-icons.css">
+<link rel="stylesheet"  href="static/styles/jquery-ui.css">
+<link rel="stylesheet"  href="static/styles/jquery.fancybox.css">
+<link rel="stylesheet"  href="static/styles/jquery.selectBox.css">
+<link rel="stylesheet"  href="static/styles/global.css">
+<link rel="stylesheet"  href="static/styles/style1.css" >
+<link rel="stylesheet"  href="static/styles/responsive1.css">
+<link rel="stylesheet"  href="static/styles/skin.less">
 
-<body class="loader-active">
 
-    <!--== Preloader Area Start ==-->
-    <div class="preloader">
-        <div class="preloader-spinner">
-            <div class="loader-content">
-                <img src="static/img/preloader.gif" alt="Cardoor">
+{% endblock %}
+
+{% block body %}
+
+<!--== Page Title Area Start ==-->
+<section id="page-title-area" class="section-padding overlay">
+    <div class="container">
+        <div class="row">
+            <!-- Page Title Start -->
+            <div class="col-lg-12">
+                <div class="section-title  text-center">
+                    <h2>Cars</h2>
+                    <span class="title-line"><i class="fa fa-car"></i></span>
+                </div>
             </div>
+            <!-- Page Title End -->
         </div>
     </div>
-    <!--== Preloader Area End ==-->
-
-    <!--== Header Area Start ==-->
-    <header id="header-area">
-        <!--== Header Top Start ==-->
-        <div id="header-top" class="d-none d-xl-block">
-            <div class="container">
-                <div class="row">
-                    <!--== Single HeaderTop Start ==-->
-                    <div class="col-lg-3 text-left">
-                        <i class="fa fa-map-marker"></i> BIT, Bengaluru, India
-                    </div>
-                    <!--== Single HeaderTop End ==-->
-
-                    <!--== Single HeaderTop Start ==-->
-                    <div class="col-lg-3 text-center">
-                        <i class="fa fa-mobile"></i> +91 010101010101
-                    </div>
-                    <!--== Single HeaderTop End ==-->
-
-                    <!--== Single HeaderTop Start ==-->
-                    <div class="col-lg-3 text-center">
-                        <i class="fa fa-clock-o"></i> All hours 07.00 A.M. - 11.00 P.M
-                    </div>
-                    <!--== Single HeaderTop End ==-->
-
-                    <!--== Social Icons Start ==-->
-                    <div class="col-lg-3 text-right">
-                        <div class="header-social-icons">
-                            <a href="#"><i class="fa fa-behance"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <!--== Social Icons End ==-->
-                </div>
-            </div>
-        </div>
-        <!--== Header Top End ==-->
-
-        <!--== Header Bottom Start ==-->
-        <div id="header-bottom">
-            <div class="container">
-                <div class="row">
-                    <!--== Logo Start ==-->
-                    <div class="col-lg-4">
-                        <a href="{{ url_for('index') }}" class="logo">
-                            <img src="static/img/logo.png" alt="Cardoor">
-                        </a>
-                    </div>
-                    <!--== Logo End ==-->
-
-                    <!--== Main Menu Start ==-->
-                    <div class="col-lg-8 d-none d-xl-block">
-                        <nav class="mainmenu alignright">
-                            <ul>
-                                <li><a href="{{ url_for('index') }}">Home</a></li>
-                                <li><a href="{{ url_for('index') }}#about">About Us</a></li>
-                                <li><a href="{{ url_for('index') }}#services">Services</a></li>
-                                <li><a href="{{ url_for('index') }}#contact">Contact Us</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!--== Main Menu End ==-->
-                </div>
-            </div>
-        </div>
-        <!--== Header Bottom End ==-->
-    </header>
-    <!--== Header Area End ==-->
+</section>
+<!--== Page Title Area End ==-->
 
     <section class="filter-wrapper">
     	<div class="container">
@@ -160,17 +60,13 @@
                 <li>
                   <i class="fa fa-car" aria-hidden="true"></i>Available-{{ result[0][1] }}
                 </li>
-                <!-- <form method="POST" action="{{ url_for('book') }}">
-                  <button name="btn1" value="2" type="submit">rent now</button>
-                </form> -->
                 <li class="orange-btn">
                   {% if result[0][1] > 0 %}
                   <form method="POST" action="{{ url_for('book') }}">
-                      <button name="btn1" value="{{ result[0][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                      <button style="cursor: pointer;" name="btn1" value="{{ result[0][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
                   </form>
-                  <!-- <a ><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a> -->
                   {% else %}
-                  <button><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                  <button><i class="fa fa-plus-circle" aria-hidden="true"></i>Not Available</button>
                   {% endif %}
                 </li>
               </ul>
@@ -203,11 +99,10 @@
                 <li class="orange-btn">
                   {% if result[1][1] > 0 %}
                   <form method="POST" action="{{ url_for('book') }}">
-                      <button name="btn1" value="{{ result[1][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                      <button style="cursor: pointer;" name="btn1" value="{{ result[1][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
                   </form>
-                  <!-- <a ><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a> -->
                   {% else %}
-                  <button><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                  <button><i class="fa fa-plus-circle" aria-hidden="true"></i>Not Available</button>
                   {% endif %}
                 </li>
               </ul>
@@ -240,11 +135,10 @@
                 <li class="orange-btn">
                   {% if result[2][1] > 0 %}
                   <form method="POST" action="{{ url_for('book') }}">
-                      <button name="btn1" value="{{ result[2][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                      <button style="cursor: pointer;" name="btn1" value="{{ result[2][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
                   </form>
-                  <!-- <a ><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a> -->
                   {% else %}
-                  <button><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                  <button><i class="fa fa-plus-circle" aria-hidden="true"></i>Not Available</button>
                   {% endif %}
                 </li></ul>
 
@@ -274,11 +168,10 @@
                 <li class="orange-btn">
                   {% if result[3][1] > 0 %}
                   <form method="POST" action="{{ url_for('book') }}">
-                      <button name="btn1" value="{{ result[3][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                      <button style="cursor: pointer;" name="btn1" value="{{ result[3][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
                   </form>
-                  <!-- <a ><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a> -->
                   {% else %}
-                  <button><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                  <button><i class="fa fa-plus-circle" aria-hidden="true"></i>Not Available</button>
                   {% endif %}
                 </li>
               </ul>
@@ -291,7 +184,7 @@
             <div class="filter-cars">
               <div class="filter-inner">
                 <img src="static/img/ritz.png" alt="" />
-                
+
               </div>
               <div class="filter-car-details clearfix">
 
@@ -310,11 +203,10 @@
                 <li class="orange-btn">
                   {% if result[4][1] > 0 %}
                   <form method="POST" action="{{ url_for('book') }}">
-                      <button name="btn1" value="{{ result[4][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                      <button style="cursor: pointer;" name="btn1" value="{{ result[4][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
                   </form>
-                  <!-- <a ><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a> -->
                   {% else %}
-                  <button><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                  <button><i class="fa fa-plus-circle" aria-hidden="true"></i>Not Available</button>
                   {% endif %}
                 </li>
               </ul>
@@ -345,11 +237,10 @@
                 <li class="orange-btn">
                   {% if result[5][1] > 0 %}
                   <form method="POST" action="{{ url_for('book') }}">
-                      <button name="btn1" value="{{ result[5][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                      <button style="cursor: pointer;" name="btn1" value="{{ result[5][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
                   </form>
-                  <!-- <a ><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a> -->
                   {% else %}
-                  <button><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                  <button><i class="fa fa-plus-circle" aria-hidden="true"></i>Not Available</button>
                   {% endif %}
                 </li>
               </ul>
@@ -380,11 +271,10 @@
                 <li class="orange-btn">
                   {% if result[6][1] > 0 %}
                   <form method="POST" action="{{ url_for('book') }}">
-                      <button name="btn1" value="{{ result[6][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                      <button style="cursor: pointer;" name="btn1" value="{{ result[6][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
                   </form>
-                  <!-- <a ><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a> -->
                   {% else %}
-                  <button><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                  <button><i class="fa fa-plus-circle" aria-hidden="true"></i>Not Available</button>
                   {% endif %}
                 </li>
               </ul>
@@ -415,11 +305,11 @@
                 <li class="orange-btn">
                   {% if result[7][1] > 0 %}
                   <form method="POST" action="{{ url_for('book') }}">
-                      <button name="btn1" value="{{ result[7][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                      <button style="cursor: pointer;" name="btn1" value="{{ result[7][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
                   </form>
-                  <!-- <a ><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a> -->
+                  <!-- <a ><i class="fa fa-plus-circle" aria-hidden="true"></i>Not Available</a> -->
                   {% else %}
-                  <button><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                  <button><i class="fa fa-plus-circle" aria-hidden="true"></i>Not Available</button>
                   {% endif %}
                 </li>
               </ul>
@@ -451,11 +341,11 @@
                 <li class="orange-btn">
                   {% if result[8][1] > 0 %}
                   <form method="POST" action="{{ url_for('book') }}">
-                      <button name="btn1" value="{{ result[8][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                      <button style="cursor: pointer;" name="btn1" value="{{ result[8][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
                   </form>
                   <!-- <a ><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a> -->
                   {% else %}
-                  <button><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                  <button><i class="fa fa-plus-circle" aria-hidden="true"></i>Not Available</button>
                   {% endif %}
                 </li>
               </ul>
@@ -485,11 +375,11 @@
                 <li class="orange-btn">
                   {% if result[9][1] > 0 %}
                   <form method="POST" action="{{ url_for('book') }}">
-                      <button name="btn1" value="{{ result[9][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                      <button style="cursor: pointer;" name="btn1" value="{{ result[9][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
                   </form>
                   <!-- <a ><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a> -->
                   {% else %}
-                  <button><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                  <button><i class="fa fa-plus-circle" aria-hidden="true"></i>Not Available</button>
                   {% endif %}
                 </li>
               </ul>
@@ -520,11 +410,11 @@
                 <li class="orange-btn">
                   {% if result[10][1] > 0 %}
                   <form method="POST" action="{{ url_for('book') }}">
-                      <button name="btn1" value="{{ result[10][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                      <button style="cursor: pointer;" name="btn1" value="{{ result[10][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
                   </form>
                   <!-- <a ><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a> -->
                   {% else %}
-                  <button><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                  <button><i class="fa fa-plus-circle" aria-hidden="true"></i>Not Available</button>
                   {% endif %}
                 </li>
               </ul>
@@ -555,11 +445,11 @@
                 <li class="orange-btn">
                   {% if result[11][1] > 0 %}
                   <form method="POST" action="{{ url_for('book') }}">
-                      <button name="btn1" value="{{ result[11][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                      <button style="cursor: pointer;" name="btn1" value="{{ result[11][0] }}" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
                   </form>
                   <!-- <a ><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</a> -->
                   {% else %}
-                  <button><i class="fa fa-plus-circle" aria-hidden="true"></i>Rent now</button>
+                  <button><i class="fa fa-plus-circle" aria-hidden="true"></i>Not Available</button>
                   {% endif %}
                 </li>
               </ul>
@@ -575,146 +465,15 @@
             </div>
           </div>
         </div>
+  	</div>
+</section>
 
 
+    <script src="static/js/jquery-ui.js"></script>
+    <script src="static/js/less.js"></script>
+    <script src="static/js/app.js"></script>
+    <script src="static/js/jquery.selectBox.js"></script>
+    <script src="static/js/jquery.fancybox.js"></script>
 
 
-
-
-
-
-
-
-
-
-    	</div>
-    </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <section id="footer-area">
-        <!-- Footer Widget Start -->
-        <div class="footer-widget-area">
-            <div class="container">
-                <div class="row">
-
-                </div>
-            </div>
-        </div>
-        <!-- Footer Widget End -->
-
-        <!-- Footer Bottom Start -->
-        <div class="footer-bottom-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer Bottom End -->
-    </section>
-    <!--== Footer Area End ==-->
-
-
-
-
-
-
-    <div class="scroll-top">
-        <img src="static/img/scroll-top.png" alt="Cardoor">
-    </div>
-    <!--== Scroll Top Area End ==-->
-
-    <!--=======================Javascript============================-->
-    <!--=== Jquery Min Js ===-->
-    <script src="static/js/jquery-3.2.1.min.js"></script>
-    <!--=== Jquery Migrate Min Js ===-->
-    <script src="static/js/jquery-migrate.min.js"></script>
-    <!--=== Popper Min Js ===-->
-    <script src="static/js/popper.min.js"></script>
-    <!--=== Bootstrap Min Js ===-->
-    <script src="static/js/bootstrap.min.js"></script>
-    <!--=== Gijgo Min Js ===-->
-    <script src="static/js/plugins/gijgo.js"></script>
-    <!--=== Vegas Min Js ===-->
-    <script src="static/js/plugins/vegas.min.js"></script>
-    <!--=== Isotope Min Js ===-->
-    <script src="static/js/plugins/isotope.min.js"></script>
-    <!--=== Owl Caousel Min Js ===-->
-    <script src="static/js/plugins/owl.carousel.min.js"></script>
-    <!--=== Waypoint Min Js ===-->
-    <script src="static/js/plugins/waypoints.min.js"></script>
-    <!--=== CounTotop Min Js ===-->
-    <script src="static/js/plugins/counterup.min.js"></script>
-    <!--=== YtPlayer Min Js ===-->
-    <script src="static/js/plugins/mb.YTPlayer.js"></script>
-    <!--=== Magnific Popup Min Js ===-->
-    <script src="static/js/plugins/magnific-popup.min.js"></script>
-    <!--=== Slicknav Min Js ===-->
-    <script src="static/js/plugins/slicknav.min.js"></script>
-
-    <!--=== Mian Js ===-->
-    <script src="static/js/main.js"></script>
-
-    <script type="text/javascript" src="static/js/angular.js"></script>
-    <script type="text/javascript" src="static/js/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="static/js/jquery-ui.js"></script>
-    <script type="text/javascript" src="static/js/jquery.timepicker.min.js"></script>
-    <script type="text/javascript" src="static/js/bootstrap.js"></script>
-    <script type="text/javascript" src="static/js/less.js"></script>
-    <script type="text/javascript" src="static/js/owl.carousel.js"></script>
-    <script type="text/javascript" src="static/js/app.js"></script>
-    <script src="http://maps.googleapis.com/maps/api/js"></script>
-    <script type="text/javascript" src="static/js/jquery.selectBox.js"></script>
-    <script type="text/javascript" src="static/js/jquery.fancybox.js"></script>
-
-    <!-- revolution slider Js -->
-    <script type="text/javascript" src="static/js//jquery.themepunch.tools.min.js"></script>
-    <script type="text/javascript" src="static/js/jquery.themepunch.revolution.min.js"></script>
-    <script type="text/javascript" src="static/js/jquery.revolution.js"></script>
-    <script type="text/javascript" src="static/extensions/revolution.extension.video.min.js"></script>
-    <script type="text/javascript" src="static/extensions/revolution.extension.slideanims.min.js"></script>
-    <script type="text/javascript" src="static/extensions/revolution.extension.actions.min.js"></script>
-    <script type="text/javascript" src="static/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script type="text/javascript" src="static/extensions/revolution.extension.kenburn.min.js"></script>
-    <script type="text/javascript" src="static/extensions/revolution.extension.navigation.min.js"></script>
-    <script type="text/javascript" src="static/extensions/revolution.extension.migration.min.js"></script>
-    <script type="text/javascript" src="static/extensions/revolution.extension.parallax.min.js"></script>
-    <!--  revolution slider Js -->
-    <!-- map                     -->
-    <script type="text/javascript" src="static/js/map.js"></script>
-     <!-- map                     -->
-    <script type="text/javascript" src="static/js/site.js"></script>
-
-
-</body>
-
-</html>
+{% endblock %}
